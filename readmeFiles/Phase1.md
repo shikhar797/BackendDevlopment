@@ -247,3 +247,25 @@ curl http://localhost:3000/user \
    * *Node.js:* Requires complex `if/else` chains, `writeHead()`, and `JSON.stringify()`.
 
    * *Express:* Simplified syntax like `app.get(...)` and `res.json(...)`.
+
+
+
+   1. Status codes
+
+You've already encountered 404.
+
+Let's establish the important ones:
+
+Code	Meaning	Typical use
+200	OK	Successful GET/request
+201	Created	Successfully created resource
+204	No Content	Success with no response body
+400	Bad Request	Client sent invalid data
+401	Unauthorized	Authentication required/failed
+403	Forbidden	Authenticated but not allowed
+404	Not Found	Resource/route doesn't exist
+405	Method Not Allowed	Route exists, method isn't supported
+409	Conflict	Request conflicts with current state
+500	Internal Server Error	Unexpected server-side failure
+
+Don't memorize all of these yet. Understand the categories first.
