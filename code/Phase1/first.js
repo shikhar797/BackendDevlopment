@@ -167,7 +167,34 @@ const server9=http.createServer((req,res)=>{
     res.end("Srever is closing")
 })
 
-server9.listen(3000,()=>{
-    console.log("server is listening in port number 3000")
-});
 
+function isNumeric(value) {
+    return /^\d+$/.test(value);
+}
+const server10=http.createServer((req,res)=>{
+    if(req.method==="GET"){
+        const myurl=new URL(req.url,`http://${req.headers.host}`)
+        const url_commponent=myurl.pathname.split('/')
+        const id=myurl.pathname.split('/')[2]
+        const user={
+            "id":id,
+            "name":myurl.searchParams.get('name'),
+            "age":myurl.searchParams.get('age')
+        }
+        res.statusCode=200
+        res.setHeader("Content-Type","application/json")
+        res.end(JSON.stringify(user))
+        if(url_commponent[1]!=="user" || url_commponent.length<3 || !isNumeric(url_commponent[2])){
+            res.statusCode=404
+            res.end("Page not Found")
+        }
+    }
+    else{
+        res.statusCode=404
+        res.end("Page not Found")
+    }
+})
+
+server10.listen(3000,()=>{
+    console.log("server is listening in port number 3000")
+});Post

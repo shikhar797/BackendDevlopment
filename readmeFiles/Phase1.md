@@ -141,7 +141,8 @@ HTTPS request
 * **Authorization:** Determines *what you can do*.
 
 ## 🔑 Terminology Cheat Sheet
-
+------------------------------------
+i also have to format this because it is not readable in github
 | **Term** | **Meaning** | 
 | **Machine** | Physical / virtual computer | 
 | **Server** | Program / Process providing a service | 
@@ -250,7 +251,10 @@ curl http://localhost:3000/user \
 
 
 
-   1. Status codes
+---------------------------------------
+i have to format my file from here onwards
+
+1. Status codes
 
 You've already encountered 404.
 
